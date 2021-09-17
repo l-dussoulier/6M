@@ -57,7 +57,7 @@
                         </li>
                     @endif
                     @if(Auth::check())
-                        @if(Auth::user()->hasRole("Administrateur"))
+                        @if(Auth::user()->hasRole("Admin"))
                             <li>
                                 <a class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-2 lg:mt-0 py-2 px-4 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" href="/dashboard">Dashboard</a>
                             </li>

@@ -12,4 +12,8 @@ class ArticleController
 
         return view('article');
     }
+
+    public function create() {
+        return view ('articles.createArticle');
+    }
 }

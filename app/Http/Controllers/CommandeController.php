@@ -101,5 +101,13 @@ class CommandeController
 
         return view('Commandes.edit', compact('currentCommande'));
     }
+
+    public function delete($id)
+    {
+       $deleteCommande = Commande::where('id',$id)->first();
+        $deleteCommande->delete();
+
+        return redirect('dashboard/demandeEnCours');
+    }
 }
 

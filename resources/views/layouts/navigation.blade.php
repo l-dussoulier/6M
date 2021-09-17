@@ -18,11 +18,22 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <x-nav-link :href="route('demandeEnCours')" :active="request()->routeIs('demandeEnCours')">
-                    {{ __('Demande en cours') }}
-                </x-nav-link>
+                    <x-nav-link :href="route('demandeEnCours')" :active="request()->routeIs('demandeEnCours')">
+                        {{ __('Demande en cours') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('article.createArticle')" :active="request()->routeIs('article.createArticle')">
+                        {{ __('Créer un article') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="google.fr">
+                        {{ __('Accès Mollie') }}
+                    </x-nav-link>
+                </div>
             </div>
-            </div>
+
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -40,6 +51,9 @@
                     </x-slot>
 
                     <x-slot name="content">
+                            <x-dropdown-link :href="route('welcome')">
+                                {{ __('Accueil') }}
+                            </x-dropdown-link>
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -47,10 +61,12 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Déconnexion') }}
                             </x-dropdown-link>
                         </form>
+
                     </x-slot>
+
                 </x-dropdown>
             </div>
 

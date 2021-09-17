@@ -14,15 +14,22 @@ use App\Http\Controllers\MollieController;
 |
 */
 
-Route::get('/', function () { return view('welcome'); });
+Route::get('/', function () { return view('welcome'); })->name("welcome");
 
 // administrateur
 
 Route::get('/dashboard', function () { return view('dashboard'); })->middleware(['auth'])->name('dashboard');
 
-Route::get('/demandeEnCours', [\App\Http\Controllers\CommandeController::class, 'list'])->middleware(['trusted.login'])->name('demandeEnCours');
+Route::get('dashboard/demandeEnCours', [\App\Http\Controllers\CommandeController::class, 'list'])->middleware(['trusted.login'])->name('demandeEnCours');
 
-Route::get('/dashboard/edit/{id}/',[\App\Http\Controllers\CommandeController::class, 'edit'])->name('edit');
+Route::get('dashboard/demandeEnCours/edit/{id}/',[\App\Http\Controllers\CommandeController::class, 'edit'])->name('edit');
+
+Route::get('/delete/{id}/',[\App\Http\Controllers\CommandeController::class, 'delete'])->name('delete');
+
+Route::get('dashboard/createArticle', [\App\Http\Controllers\ArticleController::class, 'create'])->middleware(['trusted.login'])->name('article.createArticle');
+
+
+
 
 
 // User
