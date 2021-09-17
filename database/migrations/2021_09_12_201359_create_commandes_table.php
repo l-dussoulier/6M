@@ -20,7 +20,7 @@ class CreateCommandesTable extends Migration
             $table->integer('telephone');
             $table->string('ville');
             $table->string("adresse");
-            $table->string('numero-adresse');
+            $table->string('numeroadresse');
             $table->integer('codePostal');
 
             $table->timestamps();

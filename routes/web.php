@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MollieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +14,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () { return view('welcome'); });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// administrateur
 
+Route::get('/dashboard', function () { return view('dashboard'); })->middleware(['auth'])->name('dashboard');
+
+Route::get('/demandeEnCours', [\App\Http\Controllers\CommandeController::class, 'list'])->middleware(['trusted.login'])->name('demandeEnCours');
+
+Route::get('/dashboard/edit/{id}/',[\App\Http\Controllers\CommandeController::class, 'edit'])->name('edit');
+
+
+// User
 
 Route::get('/commande', [\App\Http\Controllers\CommandeController::class, 'index'])->middleware(['trusted.login'])->name('commande');
+
+Route::get('/demandeEnCoursUser', [\App\Http\Controllers\CommandeController::class, 'listUser'])->middleware(['trusted.login'])->name('demandeEnCoursUser');
+
+Route::post('/submit', [\App\Http\Controllers\CommandeController::class, 'store'])->middleware(['trusted.login'])->name("store-commande-request");
+
+
+Route::get('/AccepteCommande', function () {return view('BonCommande'); });
+
+Route::get('/StockOut', function () {return view('StockOut'); });
+
+
+// Section paiements
+Route::get('mollie-payment',[MollieController::Class,'preparePayment'])->name('mollie.payment');
+Route::get('/BonCommande',[MollieController::Class, 'paymentSuccess'])->name('BonCommande');
 
 require __DIR__.'/auth.php';
