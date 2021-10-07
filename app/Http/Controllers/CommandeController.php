@@ -15,25 +15,17 @@ class CommandeController
 {
     public function index(Request $request) {
 
-
+        //dd($request->query('drop'));
         $taille = $request->query('taille');
+        // verification id drop existe
+        $article = Article::where('id_drop',$request->query('drop'))->first();
 
-        return view('Commandes.commande', compact('taille'));
+        return view('Commandes.commande', compact('article'));
     }
 
 
     public function store(Request $request)
     {
-        $request->validate([
-            'nom' => 'required|string|max:255',
-            'prenom' => 'required|string|max:255',
-            'adresse' => 'required|string|max:255',
-            'codePostal' => 'required|integer|max:5',
-            'ville' => 'required|string|max:255',
-            'telephone' => 'required|integer|max:10',
-            'numero_adresse' => 'required|string|max:10',
-
-        ]);
 
         if ($request->get('article') != null){
             $art_id = explode("=",$request->get('article'));
@@ -56,6 +48,12 @@ class CommandeController
                     $commandeRequest->article_id = $art_id[1];
                     $commandeRequest->statut_id = 2;
                     $commandeRequest->user_id = Auth::user()->id;
+
+                    if (strtoupper($request->get('ville')) == "LIMOGES"){
+                        $commandeRequest->fdp = 0.00;
+                    }else {
+                        $commandeRequest->fdp = 7.00;
+                    }
 
                     //$commandeRequest->save();
                     Session::put('customer_data', $commandeRequest);
@@ -81,7 +79,6 @@ class CommandeController
     public function listUser() {
         $commandesUser = Commande::all()->where('user_id',Auth::user()->id)->sortByDesc('created_at');
 
-        //dd($this->jsonService::stringToJson());
 
         return view('Commandes.demandeEnCoursUser', compact('commandesUser'));
     }

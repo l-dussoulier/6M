@@ -1,0 +1,37 @@
+@mixin flex($align: center, $justify:center, $direction: row, $wrap: nowrap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+@mixin font($font: $font--d, $size : initial, $transform: unset, $weight : 400, $color : $black, $ls: normal, $align: left, $stroke : 0) {
+  font-family: $font;
+  font-size: $size;
+  text-transform: $transform;
+  font-weight: $weight;
+  color: $color;
+  letter-spacing: $ls;
+  text-align: $align;
+  -webkit-text-stroke: $stroke $color;
+}
+@mixin abs($position : absolute, $top : 50%, $right : 50%, $bottom : auto, $left : auto, $x : 50%, $y : -50%) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  transform: translateX($x) translateY($y);
+}
+@mixin before($position : absolute, $top : auto, $right : auto, $bottom : auto, $left : auto, $content : '',$color : $grey, $opacity : 20%, $z : -10) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  content: $content;
+  color: $color;
+  opacity: $opacity;
+  overflow: hidden;
+  z-index: $z;
+}

@@ -1,0 +1,98 @@
+.form {
+  margin: 32px;
+  display: flex;
+  flex-direction: column;
+
+  & input[type="text"],
+  & input[type="number"] {
+    width: 100%;
+    border: 2px $lightGrey solid;
+    border-radius: 12px;
+    height: 52px;
+    padding: 16px;
+    @include font($font : $font--p, $size : 16px, $stroke : 0.5px);
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  & input[type="checkbox"] {
+    position: relative;
+    border: 2px $lightGrey solid;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    -webkit-appearance: none;
+
+    &:active,
+    &:checked {
+      background: $white;
+    }
+
+    &:active:after,
+    &:checked:after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 50%;
+      right: 50%;
+      transform: translateX(50%) translateY(-50%);
+      border-radius: 50%;
+      background: $black;
+    }
+  }
+
+  & label {
+    width: 100%;
+    position: relative;
+    @include font($font : $font--p, $color : $black, $size : 13px, $stroke : 0.25px);
+
+    & ~ input[type="text"],
+    & ~ input[type="number"] {
+      margin-top:: 8px;
+    }
+
+    & a {
+      color: $black;
+    }
+  }
+
+  & label:not([for="newsletter"]):not([for="promo"])::after {
+    content: "";
+    height: 8px;
+    position: absolute;
+    width: 8px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: $black;
+    margin: 0 calc(100% - 8Px);
+    border-radius: 50%;
+  }
+
+  &-newsletter,
+  &-terms {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    & label {
+      width: calc(100% - 40px);
+      padding-right: 16px;
+    }
+  }
+
+  button[type="submit"]:not(.promo) {
+    position: fixed;
+    width: calc(100% - 64px);
+    bottom: 32px;
+    right: 32px;
+    left: 32px;
+  }
+
+  & a:not(.button) {
+    text-decoration: underline;
+    @include font($font : $font--p, $color : $grey, $size : 13px, $stroke : 0.25px);
+  }
+}

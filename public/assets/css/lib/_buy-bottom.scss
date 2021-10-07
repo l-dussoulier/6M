@@ -1,0 +1,110 @@
+.buy {
+  position: sticky;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  padding: 16px 32px 32px;
+  background: $white;
+  display: block;
+}
+/* Navbar links */
+.buy a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.tag-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: auto;
+}
+
+.tag-item {
+  width: 100%;
+}
+
+.product-main {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.tag-list {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.tag-list span {
+  margin-right: 8px;
+}
+
+.product-size {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 32px 0;
+
+  & input {
+    height: 64px;
+    width: 64px;
+    border: 2px $lightGrey solid;
+    line-height: 64px;
+  }
+}
+
+.product-size input[type="radio"] {
+  display: none;
+}
+
+.product-size label {
+  @include font($font : $font--p, $size : 13px, $stroke : 0.25px, $align : center);
+  display: inline-block;
+  height: 64px;
+  width: 64px;
+  line-height: 64px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px $lightGrey solid;
+}
+
+.product-size input[type="radio"]:checked+label {
+  background-color: $black;
+  color: $white;
+  border: none;
+}
+
+.product-size input[data-stock="0"]:checked ~ a {
+  background: $darkGrey;
+  content: "Sold Out";
+}
+
+.order {
+  display: none;
+  position: sticky;
+  bottom: 0;
+  transition: bottom 2s;
+  width: 100%;
+  padding: 16px 32px 32px;
+  background: $white;
+}
+
+.CTA-list {
+  display: flex;
+  justify-content: space-around;
+  grid-gap: 16px;
+  width: 100%;
+
+  & .black {
+    width: 100%;
+  }
+}

@@ -1,0 +1,85 @@
+*:not(script),
+*:not(script)::after,
+*:not(script)::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+::-moz-selection {
+  background: $black;
+  color: $white;
+}
+
+::selection {
+  background: $black;
+  color: $white;
+  -webkit-text-stroke: $white;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+a,
+a:active,
+a:hover {
+  outline: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button,
+input,
+input:active,
+input:checked,
+input:focus {
+  background: none;
+  outline: none;
+  text-decoration: none;
+  box-shadow: none;
+  border: none;
+}

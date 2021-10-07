@@ -1,0 +1,16 @@
+footer {
+  padding: 32px;
+  background: $black;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+}
+
+footer p:not(.tagX) {
+  @include font($font : $font--p, $color : $white, $size : 13px, $stroke : none);
+}
+
+footer > p {
+  padding-bottom: 16px;
+}

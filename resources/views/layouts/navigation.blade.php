@@ -23,8 +23,33 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('article.createArticle')" :active="request()->routeIs('article.createArticle')">
+                    <x-nav-link :href="route('articles.createArticle')" :active="request()->routeIs('articles.createArticle')">
                         {{ __('Créer un article') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('articles.listeArticles')" :active="request()->routeIs('articles.listeArticles')">
+                        {{ __('Liste articles') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('promotions.createPromotion')" :active="request()->routeIs('promotions.createPromotion')">
+                        {{ __('Créer une promotion') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('promotions.listePromotions')" :active="request()->routeIs('promotions.listePromotions')">
+                        {{ __('Liste promotions') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('drops.createDrop')" :active="request()->routeIs('drops.createDrop')">
+                        {{ __('Créer un drop') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('drops.listeDrops')" :active="request()->routeIs('drops.listedrops')">
+                        {{ __('liste drops') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">

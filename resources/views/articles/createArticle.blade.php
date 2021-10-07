@@ -7,11 +7,11 @@
         <div class="min-w-screen bg-gray-100 flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
             <div class="w-1/3">
                 <div class="bg-white shadow-md rounded my-6">
-                    <form action="blabla" method="post" class="form-group ml-10 mr-10 pt-5 pb-16" enctype="multipart/form-data">
+                    <form action="{{ route('store-article-request') }}" method="post" class="form-group ml-10 mr-10 pt-5 pb-16" enctype="multipart/form-data">
                         @csrf
                         <div class="col-span-6 sm:col-span-3">
                             <label for="titre" class="block text-sm font-medium text-gray-700 mt-2">Nom de l'article</label>
-                            <input type="text" name="titre" id="titre" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md mb-6">
+                            <input type="text" name="libelle" id="libelle" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md mb-6">
                         </div>
 
                         <div>
@@ -23,21 +23,47 @@
                             </div>
                         </div>
 
-                        <div>
-                            <label for="stock" class="block text-sm font-medium text-gray-700 mt-1">
-                                Stock
-                            </label>
-                            <div class="mt-1">
-                                <input type="number" name="stock" id="stock" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md mb-6">
+                        <div class="col-span-6 sm:col-span-3">
+                            <label for="numero" class="block text-sm font-medium text-gray-700 mt-2">Numéro</label>
+                            <input type="text" name="numero" id="numero" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md mb-6">
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3">
+                            <label class="block text-sm font-medium text-gray-700 mt-2">Tailles</label>
+                            <div>
+                                <label for="s" class="block text-sm font-medium text-gray-700 mt-2">S</label>
+                                <input type="number" name="s" id="s" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-1/6 shadow-sm sm:text-sm border-gray-300 rounded-md mb-6">
+
+                                <label for="m" class="block text-sm font-medium text-gray-700 mt-2">M</label>
+                                <input type="number" name="m" id="m" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-1/6 shadow-sm sm:text-sm border-gray-300 rounded-md mb-6">
+
+                                <label for="l" class="block text-sm font-medium text-gray-700 mt-2">L</label>
+                                <input type="number" name="l" id="l" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-1/6 shadow-sm sm:text-sm border-gray-300 rounded-md mb-6">
+
+                                <label for="xl" class="block text-sm font-medium text-gray-700 mt-2">XL</label>
+                                <input type="number" name="xl" id="xl" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-1/6 shadow-sm sm:text-sm border-gray-300 rounded-md mb-6">
                             </div>
                         </div>
 
                         <div>
-                            <label for="taille" class="block text-sm font-medium text-gray-700 mt-1">
-                                Taille
+                            <label for="prix" class="block text-sm font-medium text-gray-700 mt-1">
+                                Prix
                             </label>
                             <div class="mt-1">
-                                <input type="text" name="taille" id="taille" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md mb-2">
+                                <input type="number" step="0.01" name="prix" id="prix" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md mb-2">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="drop" class="block text-sm font-medium text-gray-700 mt-1">
+                                Drop
+                            </label>
+                            <div class="mt-1">
+                                <select name="drop" id="drop" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md mb-2">
+                                    @foreach($listeDrop as $drop)
+                                        <option value="{{ $drop->id }}">{{ $drop->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
 

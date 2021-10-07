@@ -1,60 +1,100 @@
-<body style="background-color: lightgray">
+<?php include './assets/inc/meta.inc.php' ?>
+<link rel="stylesheet" href="./assets/css/master.min.css">
+<title>Everything is made of dot.</title>
+</head>
 
-<form action="{{ route('store-commande-request') }}" method="post" id="formCommande">
-    @csrf
-    <div>
-        <label for="article">Article</label>
-        <input type="text" name="article" id="article" value="">
-    </div>
-
-    <div>
-        <label for="email">email</label>
-        <input type="text" name="email">
-    </div>
-    <div>
-        <label for="telephone">Téléphone</label>
-        <input type="text" name="telephone">
-    </div>
-
-    <H5>Facturation</H5>
-    <div>
-        <label for="nom">Nom</label>
-        <input type="text" name="nom">
-    </div>
-    <div>
-        <label for="prenom">Prénom</label>
-        <input type="text" name="prenom">
-    </div>
-    <div>
-        <label for="adresse">Adresse</label>
-        <input type="text" name="adresse">
-    </div>
-    <div>
-        <label for="numero_adresse">numéro</label>
-        <input type="string" name="numero_adresse">
-    </div>
-    <div>
-        <label for="ville">Ville</label>
-        <input type="text" name="ville">
-    </div>
-    <div>
-        <label for="cp">Code postal</label>
-        <input type="number" name="cp">
+<body>
+<?php include './assets/inc/header.inc.php' ?>
+{{$article->id}}
+<section class="product">
+    <ul class="product-picture-list">
+        <li class="drop-item product-picture-item"></li>
+        <li class="drop-item product-picture-item"></li>
+        <li class="drop-item product-picture-item"></li>
+        <li class="drop-item product-picture-item"></li>
+    </ul>
+</section>
+<div class="buy">
+    <div class="tag-list">
+        <span class="tag2">Unisex</span>
+        <span class="tag2">{{\App\Models\Drop::findOrFail($article->id_drop)->name}}</span>
+        <span class="tag2">Limited</span>
     </div>
 
-    <button type="submit" id="submit-btn">Acheter</button>
-</form>
+    <div class="product-main">
+        <h2>{{$article->libelle}}</h2>
+        <h2>{{$article->prix}}€</h2>
+    </div>
+
+    <div class="CTA-list">
+        <a href="#details" class="button light">Details</a>
+        <a id="buyItem" class="button black">Buy</a>
+    </div>
+</div>
+
+<div class="order">
+    <div class="product-size">
+        <input type="radio" id="size1" name="size" value="S" data-stock="0">
+        <label for="size1">S</label>
+        <input type="radio" id="size2" name="size" value="M" data-stock="20">
+        <label for="size2">M</label>
+        <input type="radio" id="size3" name="size" value="L" data-stock="15">
+        <label for="size3">L</label>
+        <input type="radio" id="size4" name="size" value="XL" data-stock="5">
+        <label for="size4">XL</label>
+        <button class="closeModal button light">Back</button>
+        <a href="./order.php" id="orderItem" class="button black" type="submit">Order now</a>
+    </div>
+</div>
+
+<section>
+    <ol class="product-details">
+        <li class="product-details-item">
+            <h3>Description</h3>
+            <p>Drop.2 White Tee Shirt. Release in 2021 October, mod. (the little guy) on the front, the brandName on the back. Front and Back dot print give an illusion of void inside the body. Don't forget Everything is made of dot.</p>
+        </li>
+        <li class="product-details-item">
+            <h3>Details</h3>
+            <ul>
+                <li>Front & Back print</li>
+                <li>Confort</li>
+                <li>100% Coton Biologique</li>
+                <li>180g/m2</li>
+                <li>Designed in France</li>
+                <li>Limited stock</li>
+
+            </ul>
+        </li>
+
+        <li class="product-details-item">
+            <h3>Sizing</h3>
+            <p>Confort Tee Shirt, take your normal size.</p>
+            <p>Model is 180cm and he wear a M.</p>
+        </li>
+
+        <li class="product-details-item">
+            <h3>Colors</h3>
+            <p>White.Black</p>
+        </li>
+
+        <li class="product-details-item">
+            <h3>Shipping</h3>
+            <ul>
+                <li>Limoges - 0€</li>
+                <li>France(EU) - 7€</li>
+            </ul>
+
+        </li>
+        <li class="product-details-item">
+            <h3>Id</h3>
+            <p>dot.teeshirt.v2</p>
+        </li>
+
+    </ol>
+</section>
+<?php include './assets/inc/footer.inc.php' ?>
+<script src="./assets/js/main.js"></script>
+
 </body>
 
-<script src="https://js.stripe.com/v3/"></script>
-
-<script>
-
-    function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
-    // use like
-    r(function(){
-        console.log(window.location.search.substr(1));
-        document.getElementById('article').value = window.location.search.substr(1);
-    });
-
-</script>
+</html>

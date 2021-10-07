@@ -1,0 +1,26 @@
+.icon {
+  padding: 8px;
+  display: block;
+  background: $black;
+  border-radius: 50%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 32px 32px 32px 25px;
+}
+
+header.onepage {
+  margin: 32px;
+}
+
+.header-brand {
+  width: auto;
+  display: flex;
+}
+
+.header-brand-logo {
+  height: 32px;
+  width: 32px;
+}

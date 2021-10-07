@@ -12,6 +12,7 @@
         "laravel/framework": "^8.54",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.3",
         "mollie/laravel-mollie": "^2.15",
         "spatie/laravel-permission": "^5.1"
     },
@@ -19,7 +20,7 @@
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/breeze": "^1.4",
-        "laravel/sail": "^1.0.1",
+        "laravel/sail": "^1.11",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
         "phpunit/phpunit": "^9.3.3"
