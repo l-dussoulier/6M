@@ -290,7 +290,7 @@ span:not(.tagX, .tag2) {
   display: flex;
   flex-direction: column;
 }
-.form input[type=text], .form input[type=number] {
+.form input {
   width: 100%;
   border: 2px #e8e8e8 solid;
   border-radius: 12px;
@@ -341,7 +341,7 @@ span:not(.tagX, .tag2) {
   text-align: left;
   -webkit-text-stroke: 0.25px #131313;
 }
-.form label ~ input[type=text], .form label ~ input[type=number] {
+.form label ~ input[type=text], .form label ~ input[type=number], .form label ~ input[type=email], .form label ~ input[type=password] {
   margin-top: 8px;
 }
 .form label a {
@@ -437,6 +437,36 @@ header.onepage {
 .header-brand-logo {
   height: 32px;
   width: 32px;
+}
+
+.orderlist {
+  padding: 0 16px;
+}
+.orderlist-lastItem {
+  background: #131313;
+}
+.orderlist-lastItem * {
+  color: #ffffff;
+}
+.orderlist-item {
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+.orderlist-item-history {
+  box-shadow: 0 0 0 2px #B5B5B5 inset;
+}
+.orderlist-item div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.orderlist-item div a {
+  padding: 8px 16px;
+  background: #ffffff;
+  color: #131313;
+  border-radius: 32px;
 }
 
 body {

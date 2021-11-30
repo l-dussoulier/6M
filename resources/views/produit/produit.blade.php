@@ -43,8 +43,14 @@
         <input type="radio" id="size4" name="size" value="XL" data-stock="{{$xl->stock}}">
         <label for="size4">XL</label>
         <button class="closeModal button light">Back</button>
-        <input type="hidden" value="selectedsize">
-        <a href="./order.php" id="orderItem" class="button black" value="" type="submit">Order now</a>
+        <form method="POST" action="{{route('commande')}}">
+            <input type="hidden" id="taille" name="taille" value="selectedsize">
+            <input type="hidden" id="article" name="article" value="{{$article->id}}">
+            <a id="orderItem" class="button black" :href="route('commande')" onclick="event.preventDefault(); this.closest('form').submit();">Order now</a>
+            @csrf
+
+        </form>
+
     </div>
 </div>
 

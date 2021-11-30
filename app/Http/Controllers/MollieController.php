@@ -22,14 +22,18 @@ class MollieController extends Controller
      */
     public function preparePayment()
     {
+        //dd(Session::get('customer_data')->fdp);
         if($data = Session::get('customer_data')) {
         $article = Article::find($data->article_id);
+
         $total = floatval($data->fdp) + floatval($article->prix);
+           $test = number_format($total, 2, '.', '');
+       // dd(strval());
 
         $payment = Mollie::api()->payments()->create([
             'amount' => [
                 'currency' => 'EUR', // Type of currency you want to send
-                'value' =>strval($total), // You must send the correct number of decimals, thus we enforce the use of strings
+                'value' =>strval($test), // You must send the correct number of decimals, thus we enforce the use of strings
             ],
             'description' => 'Paiement bien accepté !',
             'redirectUrl' => route('BonCommande'), // after the payment completion where you to redirect

@@ -84,7 +84,7 @@ Route::get('dashboard/tailles/delete/{id}/',[\App\Http\Controllers\TailleControl
 
 // User
 
-Route::get('/commande', [\App\Http\Controllers\CommandeController::class, 'index'])->middleware(['trusted.login'])->name('commande');
+Route::post('/commande', [\App\Http\Controllers\CommandeController::class, 'index'])->middleware(['trusted.login'])->name('commande');
 //test
 Route::post('/product-page', [\App\Http\Controllers\ProductController::class, 'index'])->middleware(['trusted.login'])->name('produit');
 

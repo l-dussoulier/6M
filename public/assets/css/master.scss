@@ -1,286 +1,287 @@
-@import "lib/fonts";
-@import "lib/var";
-@import "lib/mixin";
-@import "lib/reset";
-@import "lib/textstyles";
-@import "lib/buy-bottom";
-@import "lib/form";
-@import "lib/footer";
-@import "lib/header";
+@import "./lib/_fonts.scss";
+@import "./lib/_var.scss";
+@import "./lib/_mixin.scss";
+@import "./lib/_reset.scss";
+@import "./lib/_textstyles.scss";
+@import "./lib/_buy-bottom.scss";
+@import "./lib/_form.scss";
+@import "./lib/_footer.scss";
+@import "./lib/_header.scss";
+
 
 body {
-	scroll-behavior: smooth;
-	width: 100vw;
+    scroll-behavior: smooth;
+    width: 100vw;
 }
 
 .product-details {
-	padding: 0 32px 32px;
+    padding: 0 32px 32px;
 }
 
 .product-details-item {
-	margin-bottom: 24px;
+    margin-bottom: 24px;
 }
 
 .product-details h3 {
-	margin-bottom: 4px;
+    margin-bottom: 4px;
 }
 
 .product-details ul {
-	list-style-type: disc;
-	padding: 0 16px;
+    list-style-type: disc;
+    padding: 0 16px;
 }
 
 a.button,
 button {
-	display: block;
-	width: auto;
-	padding: 16px 32px;
-	border-radius: 64px;
-	@include font($font : $font--p, $size : 16px, $stroke : 0.5px, $color: $black, $align : center);
+    display: block;
+    width: auto;
+    padding: 16px 32px;
+    border-radius: 64px;
+    @include font($font : $font--p, $size : 16px, $stroke : 0.5px, $color: $black, $align : center);
 }
 
 a.button.black,
 button.black {
-	color: $white;
-	background: $black;
-	-webkit-text-stroke-color: $white;
+    color: $white;
+    background: $black;
+    -webkit-text-stroke-color: $white;
 }
 
 a.button.light,
 button.light {
-	color: $black;
-	background: $lightGrey;
-	-webkit-text-stroke-color: $black;
+    color: $black;
+    background: $lightGrey;
+    -webkit-text-stroke-color: $black;
 }
 
 a.button.white,
 button.white {
-	color: $black;
-	background: $white;
-	-webkit-text-stroke-color: $black;
+    color: $black;
+    background: $white;
+    -webkit-text-stroke-color: $black;
 }
 
 .CTA-list {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .CTA-list > button.light {
-	flex-grow: 1;
+    flex-grow: 1;
 }
 
 .tag2 {
-	padding: 6px 12px;
-	background: $black;
-	border-radius: 16px;
+    padding: 6px 12px;
+    background: $black;
+    border-radius: 16px;
 }
 
 span.tag {
-	position: absolute;
-	top: 32px;
-	left: 32px;
-	padding: 6px 12px;
-	background: $black;
-	border-radius: 16px;
-	color: $white;
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    padding: 6px 12px;
+    background: $black;
+    border-radius: 16px;
+    color: $white;
 }
 
 .lastDrop {
-	margin-bottom: 64px;
+    margin-bottom: 64px;
 }
 
 .drop-item {
-	width: 100%;
-	height: 375px;
-	background-size: cover;
-	position: relative;
+    width: 100%;
+    height: 375px;
+    background-size: cover;
+    position: relative;
 }
 
 .product-picture-item:nth-child(1) {
-	background: url("https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F05%2Fvirgil-abloh-nike-textbook-the-ten-2.jpg?q=75&w=750&cbr=1&fit=max");
+    background: url("https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F05%2Fvirgil-abloh-nike-textbook-the-ten-2.jpg?q=75&w=750&cbr=1&fit=max");
 }
 
 .product-picture-item:nth-child(2) {
-	background: url("https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F05%2Fvirgil-abloh-nike-textbook-the-ten-9.jpg?q=75&w=750&cbr=1&fit=max");
+    background: url("https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F05%2Fvirgil-abloh-nike-textbook-the-ten-9.jpg?q=75&w=750&cbr=1&fit=max");
 }
 
 .product-picture-item:nth-child(3) {
-	background: url("https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F05%2Fvirgil-abloh-nike-textbook-the-ten-5.jpg?q=75&w=750&cbr=1&fit=max");
+    background: url("https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F05%2Fvirgil-abloh-nike-textbook-the-ten-5.jpg?q=75&w=750&cbr=1&fit=max");
 }
 
 .product-picture-item:nth-child(4) {
-	background: url("https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F05%2Fvirgil-abloh-nike-textbook-the-ten-6.jpg?q=75&w=750&cbr=1&fit=max");
+    background: url("https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F05%2Fvirgil-abloh-nike-textbook-the-ten-6.jpg?q=75&w=750&cbr=1&fit=max");
 }
 
 .drop-item a {
-	position: relative;
-	display: flex;
-	justify-content: flex-end;
-	flex-direction: column;
-	height: 100%;
-	width: 100%;
-	padding: 32px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 32px;
 }
 
 .drop-item h2,
 .drop-item p {
-	color: $white;
-	-webkit-text-stroke-color: $white;
+    color: $white;
+    -webkit-text-stroke-color: $white;
 }
 
 .archive {
-	margin: 32px 0 64px;
+    margin: 32px 0 64px;
 }
 
 .archive > h2,
 .archive > p {
-	padding: 0 32px;
+    padding: 0 32px;
 }
 
 .archive-list {
-	margin-top: 32px;
+    margin-top: 32px;
 }
 
 .archive-item,
 .product-picture-item {
-	margin-bottom: 1px;
+    margin-bottom: 1px;
 }
 
 nav {
-	margin-top: 16px;
-	width: 100%;
-	display: block;
+    margin-top: 16px;
+    width: 100%;
+    display: block;
 }
 
 body.background {
-	background: url("../src/logo.png");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position-y: bottom;
-	background-position-x: center;
-	// height: 100vh;
+    background: url("../src/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
+    // height: 100vh;
 }
 
 body.background-small {
-	background-position-y: 32vh;
-	// height: 80vh;
-	background-size: 50%;
+    background-position-y: 32vh;
+    // height: 80vh;
+    background-size: 50%;
 }
 
 .confirm {
-	margin: 32px;
-	height: 100%;
+    margin: 32px;
+    height: 100%;
 
-	& * {
-		text-align: center;
-	}
+    & * {
+        text-align: center;
+    }
 
-	&-explain {
-		position: absolute;
-		top: 60%;
-		right: 0;
-		padding: 0 32px;
+    &-explain {
+        position: absolute;
+        top: 60%;
+        right: 0;
+        padding: 0 32px;
 
-		& p {
-			padding-bottom: 16px;
-		}
-	}
+        & p {
+            padding-bottom: 16px;
+        }
+    }
 
-	& a {
-		position: absolute;
-		bottom: 32px;
-		right: 50%;
-		transform: translateX(50%);
-		width: calc(100% - 64px);
-	}
+    & a {
+        position: absolute;
+        bottom: 32px;
+        right: 50%;
+        transform: translateX(50%);
+        width: calc(100% - 64px);
+    }
 }
 
 .form-cta {
-	& a {
-		position: absolute;
-		bottom: 32px;
-		right: 50%;
-		transform: translateX(50%) translateY(calc(-100% - 16px));
-		width: calc(100% - 64px);
-	}
+    & a {
+        position: absolute;
+        bottom: 32px;
+        right: 50%;
+        transform: translateX(50%) translateY(calc(-100% - 16px));
+        width: calc(100% - 64px);
+    }
 }
 
 .cart {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 4px 32px;
-	background: $black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 32px;
+    background: $black;
 
-	& h3.tag2 {
-		padding: 0;
-	}
+    & h3.tag2 {
+        padding: 0;
+    }
 
-	& span.tag2 {
-		background: $white;
-		color: $black;
-		-webkit-text-stroke-color: $black;
-	}
+    & span.tag2 {
+        background: $white;
+        color: $black;
+        -webkit-text-stroke-color: $black;
+    }
 
-	& p {
-		color: $white;
-	}
+    & p {
+        color: $white;
+    }
 }
 
 .summary {
-	// border: 2px $lightGrey solid;
-	& ol {
-		padding: 32px;
+    // border: 2px $lightGrey solid;
+    & ol {
+        padding: 32px;
 
-		& li {
-			display: flex;
-			justify-content: space-between;
-			align-items: flex-end;
-			flex-direction: row;
-			position: relative;
-			margin-bottom: 8px;
+        & li {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-direction: row;
+            position: relative;
+            margin-bottom: 8px;
 
-			&:last-child {
-				margin-top: 32px;
-			}
+            &:last-child {
+                margin-top: 32px;
+            }
 
-			&::after {
-				content: "";
-				position: absolute;
-				bottom: 0;
-				width: 100%;
-				height: 1px;
-				background: $lightGrey;
-			}
-		}
-	}
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                background: $lightGrey;
+            }
+        }
+    }
 
-	& img {
-		width: 100px;
-		height: 100px;
-		clip-path: circle(50%);
-		object-fit: cover;
-	}
+    & img {
+        width: 100px;
+        height: 100px;
+        clip-path: circle(50%);
+        object-fit: cover;
+    }
 }
 
 .form {
-	& h2 {
-		padding-bottom: 16px;
-	}
+    & h2 {
+        padding-bottom: 16px;
+    }
 }
 
 body .buybutton {
-	width: calc(100% - 64px);
-	position: fixed;
-	bottom: 32px;
-	right: 50%;
-	transform: translateX(50%);
+    width: calc(100% - 64px);
+    position: fixed;
+    bottom: 32px;
+    right: 50%;
+    transform: translateX(50%);
 }
 //product page
 /* Style the navbar */
 @media screen and (min-width:$mobile) {
-	body {
-		background: red;
-	}
+    // body {
+    // 	background: red;
+    // }
 }

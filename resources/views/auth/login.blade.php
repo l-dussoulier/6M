@@ -25,9 +25,9 @@
             <!-- Email Address -->
 
                 <label for="email">Email</label>
-                <input id="email" type="text" name="email" autocomplete="email" required autofocus>
+                <input id="email" type="email" name="email" autocomplete="email" required autofocus>
                 <label for="password">Password</label>
-                <input id="password" type="text" name="password" required autocomplete="password">
+                <input id="password" type="password" name="password" required autocomplete="password">
 
 
                 @if (Route::has('password.request'))

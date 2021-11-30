@@ -1,0 +1,35 @@
+.orderlist {
+  padding: 0 16px;
+
+  &-lastItem {
+    background: $black;
+
+    & * {
+      color: $white;
+    }
+  }
+
+  &-item {
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+
+    &-history {
+      box-shadow: 0 0 0 2px $grey inset;
+    }
+
+    & div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+
+      & a {
+        padding: 8px 16px;
+        background: $white;
+        color: $black;
+        border-radius: 32px;
+      }
+    }
+  }
+}
